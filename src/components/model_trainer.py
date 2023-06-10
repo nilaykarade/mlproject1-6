@@ -55,7 +55,6 @@ class ModelTrainer:
                 "RandomForestRegressor":{
                     "n_estimators":[3,5,10], 
                     "max_depth":[3,5,8]
-
                 }
             }
 

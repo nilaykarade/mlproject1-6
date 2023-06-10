@@ -79,10 +79,16 @@ class DataTransformation:
             target_column_name="Selling_Price"
             #numerical_columns = ['Year', 'Present_Price', 'Kms_Driven', 'Owner']
 
+            #X_train
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
+            
+            #y_train
             target_feature_train_df=train_df[target_column_name]
-
+            
+            #X_test
             input_feature_test_df=test_df.drop(columns=[target_column_name],axis=1)
+            
+            #y_test
             target_feature_test_df=test_df[target_column_name]
 
             print("input_feature_train_df------",input_feature_train_df.columns)
@@ -92,6 +98,7 @@ class DataTransformation:
             logging.info(str(input_feature_train_df.columns))
             logging.info(str(input_feature_test_df.columns))
 
+            #apply transformation on X_train and X_test
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 

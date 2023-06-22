@@ -29,8 +29,8 @@ class DataTransformation:
         '''
         logging.info("Entered the data transormation component")
         try:
-            numerical_columns = ['Year', 'Present_Price', 'Kms_Driven', 'Owner']#list(df.select_dtypes(include='object').columns)
-            categorical_columns = [ 'Fuel_Type', 'Seller_Type', 'Transmission']
+            numerical_columns = ['Year', 'Present_Price', 'Kms_Driven',]#list(df.select_dtypes(include='object').columns)
+            categorical_columns = ['Fuel_Type', 'Transmission']
 
             num_pipeline= Pipeline(
                 steps=[

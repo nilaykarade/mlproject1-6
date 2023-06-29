@@ -36,8 +36,6 @@ def predict_price():
     result=predictPipeline.model_prediction(df)
     return render_template('index.html',prediction_value=result[0])
 
-
-
 if __name__=="__main__":
     
     try:

@@ -45,7 +45,18 @@ class CustomData:
                 "Fuel_Type":[self.fuel_type],
                 "Transmission":[self.transmission]
             }
-            
+            """
+            Task:::>
+            rearrrange dictionalry key:values in accordance with followoing sequence
+            'Year', 'Present_Price', 'Kms_Driven', 'Fuel_Type', 'Transmission', 'Selling_Price',
+            -1.54838953  0.05812444  1.83978524  0.          0.          2.1821789  0.          3.09124642
+
+            Task:::> 
+            create one ec2 
+            create EBS
+            create code pipeline
+            In case of error try research for config file 
+            """
             df=pd.DataFrame(custom_data_input_dict)
             return df
         

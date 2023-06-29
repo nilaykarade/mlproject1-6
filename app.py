@@ -4,6 +4,9 @@ Created on Fri Feb 17 09:20:54 2023
 
 @author: nilay
 """
+import sys
+from src.exception import CustomException
+from src.logger import logging
 
 from flask import  Flask, render_template,request
 import numpy as np
@@ -37,7 +40,10 @@ def predict_price():
 
 if __name__=="__main__":
     #app.run(host='0.0.0.0',port=8080)
-    app.run(host='127.0.0.1',debug=True)
+    try:
+      app.run(debug=True)
+    except Exception as e:
+            raise CustomException(e,sys)
     
 
 

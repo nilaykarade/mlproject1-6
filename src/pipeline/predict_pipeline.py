@@ -9,8 +9,8 @@ class PredictPipeline:
 
     def model_prediction(self,features):
         try:
-            model_path='artificats\model.pkl'
-            preprocessor_obj_path='artificats\preprocessor.pkl'
+            model_path='artifacts\model.pkl'
+            preprocessor_obj_path='artifacts\preprocessor.pkl'
             model=load_object(model_path)
             preprocessor_obj=load_object(preprocessor_obj_path)
             data_scaled=preprocessor_obj.transform(features)
@@ -41,11 +41,9 @@ class CustomData:
             custom_data_input_dict={
                 "Kms_Driven":[self.km],
                 "Present_Price":[self.oprice],
-                "Year":[self.age],
+                "Year":[self.year],
                 "Fuel_Type":[self.fuel_type],
-                "Transmission":[self.transmission],
-                "Seller_Type":[self.seller_type],
-                "Owner":[self.owner]
+                "Transmission":[self.transmission]
             }
             
             df=pd.DataFrame(custom_data_input_dict)

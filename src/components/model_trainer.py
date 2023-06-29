@@ -26,12 +26,14 @@ class ModelTrainer:
     def initiate_model_trainer(self,train_array,test_array):
         try:
             logging.info("Split training and test input data")
+            
             X_train,y_train,X_test,y_test=(
                 train_array[:,:-1],
                 train_array[:,-1],
                 test_array[:,:-1],
                 test_array[:,-1]
             )
+            logging.info("Training data---- "+str(X_train[0]))
             models = {
                 "LinearRegression":LinearRegression(),
                 "KNeighborsRegressor":KNeighborsRegressor(),

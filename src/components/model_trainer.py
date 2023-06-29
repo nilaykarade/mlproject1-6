@@ -50,8 +50,7 @@ class ModelTrainer:
                     "n_neighbors":[12,14,16]
 
                 },
-                "DecisionTreeRegressor":{
-                    
+                "DecisionTreeRegressor":{                    
                     "max_depth":[3,5,8]
                 },
                 "RandomForestRegressor":{

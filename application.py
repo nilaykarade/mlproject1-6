@@ -12,8 +12,8 @@ from flask import  Flask, render_template,request
 import numpy as np
 import pickle
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
-app=Flask(__name__)
-
+application=Flask(__name__)
+app=application
 #route
 
 @app.route('/')
@@ -39,9 +39,12 @@ def predict_price():
 
 
 if __name__=="__main__":
-    #app.run(host='0.0.0.0',port=8080)
+    
     try:
-      app.run(debug=True)
+      #Use below code for local deployment
+      #app.run(debug=True)
+      #Use below code for cloud/server deployment
+      app.run(host='0.0.0.0')
     except Exception as e:
             raise CustomException(e,sys)
     
